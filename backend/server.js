@@ -3,6 +3,9 @@ const express = require("express")
 
 const app = express();
 
+app.get("/api/notes", (req, resp) => {
+    resp.status(200).send("5 responses")
+})
 app.listen(5001, () => {
     console.log("Server started on PORT: 5001");
 })
