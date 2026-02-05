@@ -12,7 +12,7 @@ router.post("/", (req, resp) => {
 })
 // Isto é uma rota para atualizar as notas
 // O Id tem a ver com que nota queremos atualizar
-
+// Ex: // http://localhost:5001/api/notes/22
 router.put("/id:", (req, resp) => {
     resp.status(200).json({message: "Note updated successfully"})
 })
