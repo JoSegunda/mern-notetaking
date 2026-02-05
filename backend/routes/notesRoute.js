@@ -1,26 +1,22 @@
 import express from "express";
+import { getAllNotes } from "../Controllers/notesController.js"
+import { saveNotes } from "../Controllers/notesController.js"
+import { updateNotes } from "../Controllers/notesController.js"
+import { deleteNotes } from "../Controllers/notesController.js"
 
 const router = express.Router();
 
 // Isto é  uma rota(route) para buscar as notas
-router.get("/", (req, resp) => {
-    resp.status(200).send("Fetching the notes")
-})
+router.get("/", getAllNotes)
 
 // Isto é uma rota para salvar as notas
-router.post("/", (req, resp) => {
-    resp.status(201).json({message: "Note posted successfully"})
-})
+router.post("/", saveNotes)
 
 // Isto é uma rota para atualizar as notas
 // O Id tem a ver com que nota queremos atualizar
 // Ex:http://localhost:5001/api/notes/22
-router.put("/id:", (req, resp) => {
-    resp.status(200).json({message: "Note updated successfully"})
-})
+router.put("/id:", updateNotes)
 
 // Isto é uma rota para apagar as notas
-router.delete("/", (req, resp) => {
-    resp.status(200).json({message: "Note deleted successfully"})
-})
+router.delete("/", deleteNotes)
 export default router;
