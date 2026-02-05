@@ -1,27 +1,32 @@
-// import express from "express"
-const express = require("express")
+import express from "express";
+import notesRoute from "./routes/notesRoute.js";
+
+
+const express = require("express");
 
 const app = express();
 
-// Isto é  uma rota(route)
-app.get("/api/notes", (req, resp) => {
-    resp.status(200).send("11 notes")
-})
+app.use("/api/notes");
 
-// put something to DB
-app.post("/api/notes", (req, resp) => {
-    resp.status(201).json({message:"Node posted successfully"})
-})
+// // Isto é  uma rota(route)
+// app.get("/api/notes", (req, resp) => {
+//     resp.status(200).send("11 notes")
+// })
 
-// update
-app.put("/api/notes/:id", (req, resp) => {
-    resp.status(201).json({message:"Note updated successfully"})
-})
-// delete
-// The id is for the note we want to edit
-app.delete("/api/notes/:id", (req, resp) => {
-    resp.status(201).json({message:"Note deleted successfully"})
-})
+// // put something to DB
+// app.post("/api/notes", (req, resp) => {
+//     resp.status(201).json({message:"Node posted successfully"})
+// })
+
+// // update
+// app.put("/api/notes/:id", (req, resp) => {
+//     resp.status(201).json({message:"Note updated successfully"})
+// })
+// // delete
+// // The id is for the note we want to edit
+// app.delete("/api/notes/:id", (req, resp) => {
+//     resp.status(201).json({message:"Note deleted successfully"})
+// })
 
 // http://localhost:5001/api/notes/22
 app.listen(5001, () => {
