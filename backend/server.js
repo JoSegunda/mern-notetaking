@@ -1,9 +1,6 @@
 import express from "express";
 import notesRoutes from "./routes/notesRoute.js";
 
-
-const express = require("express");
-
 const app = express();
 
 // vai colocar como prefixo /api/notes
