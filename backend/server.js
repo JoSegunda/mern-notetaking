@@ -6,7 +6,7 @@ const express = require("express");
 
 const app = express();
 
-app.use("/api/notes");
+app.use("/api/notes", notesRoute);
 
 app.listen(5001, () => {
     console.log("Server started on PORT: 5001");
