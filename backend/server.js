@@ -1,5 +1,5 @@
-import express from "express";
-import notesRoute from "./routes/notesRoute.js";
+// import express from "express";
+import notesRoutes from "./routes/notesRoute.js";
 
 
 const express = require("express");
@@ -7,7 +7,7 @@ const express = require("express");
 const app = express();
 
 // vai colocar como prefixo /api/notes
-app.use("/api/notes", notesRoute);
+app.use("/api/notes", notesRoutes);
 
 app.listen(5001, () => {
     console.log("Server started on PORT: 5001");
